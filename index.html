@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style/master.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet"> 
+    <title>HOME</title>
+</head>
+<body onload="getLocation();">
+    <!-- BEGIN BODY -->
+    <div class="header">
+        <div class="header-one">
+            <p>Weather App</p>
+        </div>
+        <div class="header-two">
+            <p id="location">loading...</p>
+        </div>
+        <div class="header-three">
+            <label class="search">
+                <input placeholder="Search" id="input">
+                <button type="button" onclick="getInput();">Search</button>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <div class="main-1">
+            <p id="current">loading...</p>
+        </div>
+        <div class="main-2">
+            <p id="hourly">loading...</p>
+        </div>
+        <div class="main-3">
+            <p id="days">loading...</p>
+        </div>
+        <div id="map" class="main-map">
+            <p>loading...</p>
+        </div>
+    </div>
+    <!-- END BODY -->
+
+    <!-- BEGIN SCRIPTS -->
+    <script type="text/javascript" src="/script/main.js"></script>
+    <script defer type="text/javascript" src="/script/location.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIyCizpSoe_z1trTg8nCY6ClUHe0V3uuQ&callback=mapCoords"></script>
+    <!-- END SCRIPTS -->
+
+</body>
+</html>
