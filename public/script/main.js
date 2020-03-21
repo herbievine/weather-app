@@ -105,16 +105,6 @@ function displayError(errorCode, errorMsg, onlyMsg) {
     }, 5000);
 }
 
-function showIcon(icon) {
-    const skycons = new Skycons({"color": "white"});
-
-    skycons.add(document.getElementById("current-icon"), icon.currently.icon);
-    skycons.add(document.getElementById("hourly-icon"), icon.hourly.icon);
-    skycons.add(document.getElementById("days-icon"), icon.daily.icon);
-
-    skycons.play();
-}
-
 function mapCoords() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(initMap);
@@ -133,4 +123,14 @@ function initMap(p, c, d) {
         const map = new google.maps.Map(document.getElementById('map'), {zoom: 10, center: focus});
         const marker = new google.maps.Marker({position: focus, map: map});
     }
+}
+
+function showIcon(icon) {
+    const skycons = new Skycons({"color": "white"});
+
+    skycons.add(document.getElementById("current-icon"), icon.currently.icon);
+    skycons.add(document.getElementById("hourly-icon"), icon.hourly.icon);
+    skycons.add(document.getElementById("days-icon"), icon.daily.icon);
+
+    skycons.play();
 }
