@@ -16,6 +16,14 @@ async function getData(pos) {
         displayError(ds_json.code, ds_json.error, false);
         return console.log(`API Error ${ds_json.code} (${ds_json.error})`);
     } else if (!ds_json.code) {
+        let location = ds_json.timezone.split('/')[1];
+
+        if (location.includes('_')) {
+            location = location.replace(/_/g, " ")
+        }
+
+        document.getElementById("location").innerHTML = location;
+
         return displayData(ds_json)
     }
 }
@@ -58,6 +66,9 @@ async function getInput() {
                 return console.log(`API Error ${ds_json.code} (${ds_json.error})`);
             } else if (!ds_json.code) {
                 fromSearch = true;
+
+                document.getElementById("location").innerHTML = value.toLowerCase();
+
                 displayData(ds_json);
                 return initMap(null, fromSearch, ds_json);
             }
@@ -72,7 +83,7 @@ function displayData(data) {
         location = location.replace(/_/g, " ")
     }
 
-    document.getElementById("location").innerHTML = location;
+    // document.getElementById("location").innerHTML = location;
     document.getElementById("current").innerHTML = `<strong><u>Currently:</u></strong><br>Temperature: ${data.currently.temperature}°C<br>Wind Speed: ${data.currently.windSpeed} metres/sec`;
     document.getElementById("hourly").innerHTML = `<strong><u>Today:</u></strong><br>Summary: ${data.hourly.summary}`;
     document.getElementById("days").innerHTML = `<strong><u>Next few days:</u></strong><br>Summary: ${data.daily.summary}`;

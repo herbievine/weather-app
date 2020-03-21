@@ -26,7 +26,8 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--deep-purple)
+    background-color: var(--deep-purple);
+    text-transform: capitalize;
 }
 
 .search button {
