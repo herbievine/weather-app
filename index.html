@@ -46,15 +46,6 @@
 
     <!-- BEGIN SCRIPTS -->
     <script async defer type="text/javascript" src="/script/main.js"></script>
-    <script>
-        function mapCoords() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(initMap);
-            } else {
-                return displayError(null, 'Geolocation is not supported by your browser!', true)
-            }
-        }
-    </script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm-MoZBmSfDOHUi19bg5QhY90NogjvdCQ&callback=mapCoords"></script>
     <script defer src="/script/skycons.min.js"></script>
     <!-- END SCRIPTS -->
