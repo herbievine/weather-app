@@ -115,13 +115,13 @@ function showIcon(icon) {
     skycons.play();
 }
 
-function mapCoords() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(initMap);
-    } else {
-        return displayError(null, 'Geolocation is not supported by your browser!', true)
-    }
-}
+// function mapCoords() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(initMap);
+//     } else {
+//         return displayError(null, 'Geolocation is not supported by your browser!', true)
+//     }
+// }
 
 function initMap(p, c, d) {
     if (c) {
