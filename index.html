@@ -22,14 +22,20 @@
             </label>
         </div>
     </div>
+    <div class="error" id="error-container">
+        <p id="error-msg"></p>
+    </div>
     <div class="container">
         <div class="main-1">
+            <canvas id="current-icon" width="128" height="128"></canvas>
             <p id="current">loading...</p>
         </div>
         <div class="main-2">
+            <canvas id="hourly-icon" width="128" height="128"></canvas>
             <p id="hourly">loading...</p>
         </div>
         <div class="main-3">
+            <canvas id="days-icon" width="128" height="128"></canvas>
             <p id="days">loading...</p>
         </div>
         <div id="map" class="main-map">
@@ -39,9 +45,9 @@
     <!-- END BODY -->
 
     <!-- BEGIN SCRIPTS -->
-    <script type="text/javascript" src="/script/main.js"></script>
-    <script defer type="text/javascript" src="/script/location.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIyCizpSoe_z1trTg8nCY6ClUHe0V3uuQ&callback=mapCoords"></script>
+    <script async defer type="text/javascript" src="/script/main.min.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCm-MoZBmSfDOHUi19bg5QhY90NogjvdCQ&callback=mapCoords"></script>
+    <script defer src="/script/skycons.min.js"></script>
     <!-- END SCRIPTS -->
 
 </body>

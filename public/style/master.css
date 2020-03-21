@@ -1,6 +1,6 @@
 :root {
     --deep-blue: #03001F;
-    --deep-purple: #01000a;
+    --deep-purple: #07020b;
     --white: #FFFFFF;
 }
 
@@ -16,8 +16,8 @@ body {
 }
 
 #map {
-    width: 40%;
-    height: 200px;
+    width: 30%;
+    height: 100%;
 }
 
 .header {
@@ -27,28 +27,6 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: var(--deep-purple)
-}
-
-.container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    padding: 2% 5%;
-}
-
-.main-1 {
-    flex: 1;
-    padding: 0 10px;
-}
-
-.main-2 {
-    flex: 1;
-    padding: 0 10px;
-}
-
-.main-3 {
-    flex: 1;
-    padding: 0 10px;
 }
 
 .search button {
@@ -69,3 +47,54 @@ body {
 .search input:focus {
     outline-width: 0;
 }
+
+.error {
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #400e11;
+    right: 0;
+}
+
+.error p {
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 2% 5%;
+    height: 50%;
+}
+
+.container canvas {
+    display: block;
+    margin: 10px auto;
+    align-items: center;
+}
+
+.container > div:not(#map) {
+    border-right: 100px solid var(--deep-blue);
+}
+
+.main-1 {
+    flex: 1;
+    padding: 0 20px;
+    background-color: var(--deep-purple);
+}
+
+.main-2 {
+    flex: 1;
+    padding: 0 20px;
+    background-color: var(--deep-purple);
+}
+
+.main-3 {
+    flex: 1;
+    padding: 0 20px;
+    background-color: var(--deep-purple);
+}
+
