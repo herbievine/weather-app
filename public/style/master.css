@@ -1,7 +1,17 @@
 :root {
-    --deep-blue: #03001F;
-    --deep-purple: #07020b;
-    --white: #FFFFFF;
+    --yellow: #FFC13D;
+    --yellow-orange: #FFB144;
+    --orange: #FA923D;
+    --orange-red: #EB6D3F;
+    --red: #FF5543;
+    --light-blue: #4EF3FF;
+    --blue: #428FFF;
+    --dark-blue: #3CAFE8;
+    --bg: #F0EBF0;
+}
+
+::placeholder {
+  color: white;
 }
 
 body {
@@ -11,8 +21,8 @@ body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
-    background-color: var(--deep-blue);
-    color: var(--white);
+    background-color: white;
+    color: white;
 }
 
 #map {
@@ -26,22 +36,23 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--deep-purple);
+    background-image: linear-gradient(97deg, var(--yellow), var(--yellow-orange), var(--orange), var(--orange-red), var(--red));
     text-transform: capitalize;
+    color: white;
 }
 
 .search button {
-    border: var(--white) 1px solid;
+    border: white 1px solid;
     border-radius: 10px;
-    background: var(--deep-purple);
-    color: var(--white);
+    background: rgb(0, 0, 0, 0);
+    color: white;
 }
 
 .search input {
-    border: var(--white) 1px solid;
+    border: white 1px solid;
     border-radius: 10px;
-    background: var(--deep-purple);
-    color: var(--white);
+    background: rgb(0, 0, 0, 0);
+    color: white;
     padding: 0 5px;
 }
 
@@ -55,7 +66,7 @@ body {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #400e11;
+    background-color: var(--red);
     right: 0;
 }
 
@@ -67,7 +78,8 @@ body {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    padding: 2% 5%;
+    background-image: linear-gradient(97deg, var(--yellow), var(--yellow-orange), var(--orange), var(--orange-red), var(--red));
+    margin: 2% 5%;
     height: 50%;
 }
 
@@ -78,24 +90,36 @@ body {
 }
 
 .container > div:not(#map) {
-    border-right: 100px solid var(--deep-blue);
+    border-right: 100px solid white;
 }
 
 .main-1 {
     flex: 1;
     padding: 0 20px;
-    background-color: var(--deep-purple);
+    background: rgb(0, 0, 0, 0);
 }
 
 .main-2 {
     flex: 1;
     padding: 0 20px;
-    background-color: var(--deep-purple);
+    background: rgb(0, 0, 0, 0);
 }
 
 .main-3 {
     flex: 1;
     padding: 0 20px;
-    background-color: var(--deep-purple);
+    background: rgb(0, 0, 0, 0);
 }
 
+.credit {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.credit p {
+    font-weight: 700;
+    background: -webkit-linear-gradient(97deg, var(--orange-red), var(--red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

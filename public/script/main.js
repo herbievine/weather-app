@@ -1,3 +1,11 @@
+function getWidth() {
+    const w = window.innerWidth;
+    if (w < 1300) {
+        alert('This website may not be suitable for your device');
+        return displayError(null, 'This website may not be suitable for your device', true);
+    }
+}
+
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getData);
@@ -77,13 +85,6 @@ async function getInput() {
 }
 
 function displayData(data) {
-    let location = data.timezone.split('/')[1];
-
-    if (location.includes('_')) {
-        location = location.replace(/_/g, " ")
-    }
-
-    // document.getElementById("location").innerHTML = location;
     document.getElementById("current").innerHTML = `<strong><u>Currently:</u></strong><br>Temperature: ${data.currently.temperature}°C<br>Wind Speed: ${data.currently.windSpeed} metres/sec`;
     document.getElementById("hourly").innerHTML = `<strong><u>Today:</u></strong><br>Summary: ${data.hourly.summary}`;
     document.getElementById("days").innerHTML = `<strong><u>Next few days:</u></strong><br>Summary: ${data.daily.summary}`;
