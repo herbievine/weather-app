@@ -1,9 +1,23 @@
+let msgSent = false;
+
 function getWidth() {
     const w = window.innerWidth;
-    if (w < 1300) {
+    if (w < 1300 && !msgSent) {
+        msgSent = true;
         alert('This website may not be suitable for your device');
-        return displayError(null, 'This website may not be suitable for your device', true);
+        displayError(null, 'This website may not be suitable for your device', true);
     }
+
+    if (w < 1000) {
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("overlay-box").style.display = "block";
+    } else {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("overlay-box").style.display = "none";
+    }
+
+    console.log(w);
+    setTimeout(getWidth, 1000);
 }
 
 function getLocation() {
